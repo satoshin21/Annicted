@@ -5,6 +5,7 @@ use_frameworks!
 target 'Annicted' do
 pod 'Alamofire'
 pod 'RxSwift'
+pod 'RxAlamofire'
 
 end
 
