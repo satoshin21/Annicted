@@ -6,13 +6,24 @@
 //  Copyright © 2016年 SatoshiN21. All rights reserved.
 //
 
+import UIKit
+import RxAlamofire
+import RxSwift
+import RxCocoa
+import Keys
+
 class AnnictApiService {
     // client id
-    static var ClientId = "5e0890ed674ec454caca71c0d8e530ba6f74edfff033a32fce439a4441bd1884"
+    static var ClientId = AnnictedKeys().annictClientId()
+    
+    static var ClientSecret = AnnictedKeys().annictClientSecret()
     
     static var BaseUrl = "https://api.annict.com"
     
     static var OAuthAuthorize = "/oauth/authorize"
+    
+    static var RedirectUri = "https://jp.hatenadiary.satoshin21/redirect_uri"
+
     
     enum ResourcePath: String {
         case OAuthAuthorize = "/oauth/authorize"    // 認証ページ
@@ -28,5 +39,28 @@ class AnnictApiService {
         var path: String {
             return AnnictApiService.BaseUrl + rawValue
         }
+    }
+}
+
+// MARK:- Get Params
+
+extension UIWebView {
+    
+    func loadRequest(resourcePath: AnnictApiService.ResourcePath,queryParams: [String:AnyObject]) {
+        guard let url = NSURL(string: resourcePath.path) else {
+            return
+        }
+        
+        loadRequest(url, queryParams: queryParams)
+    }
+    
+    func loadRequest(url: NSURL,queryParams: [String:AnyObject]) {
+        
+        let paramAppendedUrl = "\(url.absoluteString)?\(queryParams.map({"\($0.0)=\($0.1)"}).joinWithSeparator("&"))"
+        guard let url = NSURL(string: paramAppendedUrl) else {
+            return
+        }
+        
+        loadRequest(NSURLRequest(URL: url))
     }
 }

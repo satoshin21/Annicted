@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		392BFC68DCA200A2E658649F /* Pods_Annicted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */; };
 		C11D3F401D3FE8D300869CA5 /* AnnictApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */; };
+		C19134881D55C3D6004B9E25 /* NSURL+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */; };
 		C1EAB9A61D24391400BDDC70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EAB9A51D24391400BDDC70 /* AppDelegate.swift */; };
 		C1EAB9A81D24391400BDDC70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EAB9A71D24391400BDDC70 /* ViewController.swift */; };
 		C1EAB9AB1D24391400BDDC70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EAB9A91D24391400BDDC70 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictApiService.swift; sourceTree = "<group>"; };
+		C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Easy.swift"; sourceTree = "<group>"; };
 		C1EAB9A21D24391400BDDC70 /* Annicted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Annicted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1EAB9A51D24391400BDDC70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1EAB9A71D24391400BDDC70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		C11D3F3D1D3FE88100869CA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */,
 				C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */,
 			);
 			path = Model;
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19134881D55C3D6004B9E25 /* NSURL+Easy.swift in Sources */,
 				C11D3F401D3FE8D300869CA5 /* AnnictApiService.swift in Sources */,
 				C1EAB9A81D24391400BDDC70 /* ViewController.swift in Sources */,
 				C1EAB9B81D2439A800BDDC70 /* AuthViewController.swift in Sources */,
