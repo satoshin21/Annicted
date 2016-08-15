@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		392BFC68DCA200A2E658649F /* Pods_Annicted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */; };
+		63B788F31D6203A600AE96B4 /* MyProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */; };
+		63B788F51D6203EA00AE96B4 /* MyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F41D6203EA00AE96B4 /* MyProgram.swift */; };
+		63B788F71D6207E800AE96B4 /* AnnictDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */; };
+		63B788F91D62089400AE96B4 /* NSDate+Annict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F81D62089400AE96B4 /* NSDate+Annict.swift */; };
 		C11D3F401D3FE8D300869CA5 /* AnnictApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */; };
 		C19134881D55C3D6004B9E25 /* NSURL+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */; };
 		C1EAB9A61D24391400BDDC70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EAB9A51D24391400BDDC70 /* AppDelegate.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewModel.swift; sourceTree = "<group>"; };
+		63B788F41D6203EA00AE96B4 /* MyProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgram.swift; sourceTree = "<group>"; };
+		63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictDateTransform.swift; sourceTree = "<group>"; };
+		63B788F81D62089400AE96B4 /* NSDate+Annict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Annict.swift"; sourceTree = "<group>"; };
 		65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictApiService.swift; sourceTree = "<group>"; };
 		C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Easy.swift"; sourceTree = "<group>"; };
@@ -60,6 +68,9 @@
 			children = (
 				C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */,
 				C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */,
+				63B788F41D6203EA00AE96B4 /* MyProgram.swift */,
+				63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */,
+				63B788F81D62089400AE96B4 /* NSDate+Annict.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -67,6 +78,7 @@
 		C11D3F3E1D3FE8B000869CA5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,10 +249,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C19134881D55C3D6004B9E25 /* NSURL+Easy.swift in Sources */,
+				63B788F31D6203A600AE96B4 /* MyProgramsViewModel.swift in Sources */,
+				63B788F91D62089400AE96B4 /* NSDate+Annict.swift in Sources */,
 				C11D3F401D3FE8D300869CA5 /* AnnictApiService.swift in Sources */,
+				63B788F71D6207E800AE96B4 /* AnnictDateTransform.swift in Sources */,
 				C1EAB9A81D24391400BDDC70 /* ViewController.swift in Sources */,
 				C1EAB9B81D2439A800BDDC70 /* AuthViewController.swift in Sources */,
 				C1EAB9A61D24391400BDDC70 /* AppDelegate.swift in Sources */,
+				63B788F51D6203EA00AE96B4 /* MyProgram.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
