@@ -41,10 +41,11 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
             if let code = query["code"] {
                 params["code"] = code
             }
-            print("params = \(params)")
             
             requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { (response, responseObject) in
-                print(responseObject)
+                
+                responseObject
+                
                 }, onError: { (e) in
                     print(e)
                 }, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)

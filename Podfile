@@ -7,6 +7,8 @@ pod 'Alamofire'
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'RxAlamofire'
+pod 'ObjectMapper'
+pod 'KeychainAccess'
 
 end
 
