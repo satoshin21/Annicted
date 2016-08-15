@@ -37,10 +37,11 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
             params["client_id"] = AnnictApiService.ClientId
             params["client_secret"] = AnnictApiService.ClientSecret
             params["grant_type"] = "authorization_code"
-            params["redirect_uri"] = AnnictApiService.BaseUrl
+            params["redirect_uri"] = AnnictApiService.RedirectUri
             if let code = query["code"] {
                 params["code"] = code
             }
+            print("params = \(params)")
             
             requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { (response, responseObject) in
                 print(responseObject)
