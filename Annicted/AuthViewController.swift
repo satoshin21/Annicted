@@ -11,6 +11,7 @@ import Alamofire
 import RxSwift
 import RxAlamofire
 import RxCocoa
+import KeychainAccess
 
 class AuthViewController: UIViewController,UIWebViewDelegate {
 
@@ -44,7 +45,9 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
             
             requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { (response, responseObject) in
                 
-                responseObject
+                if let dict = responseObject as? [String:AnyObject],let accessToken = dict["access_token"] as? String {
+                    Keychain()["accessToken"] = accessToken
+                }
                 
                 }, onError: { (e) in
                     print(e)
