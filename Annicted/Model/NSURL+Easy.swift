@@ -24,10 +24,8 @@ extension NSURL {
         }
         
         var params = [String:String]()
-        let queries = query.componentsSeparatedByString("&")
         query.componentsSeparatedByString("&").map({$0.componentsSeparatedByString("=")}).filter({$0.count == 2}).forEach { (keyParam) in
             params[keyParam[0]] = keyParam[1]
-            print("keyParam = \(keyParam)")
         }
         return params
     }

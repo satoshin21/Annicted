@@ -14,7 +14,7 @@ import RxCocoa
 import KeychainAccess
 
 class AuthViewController: UIViewController,UIWebViewDelegate {
-
+    
     @IBOutlet weak var webView: UIWebView!
     
     let disposeBag = DisposeBag()
@@ -25,9 +25,9 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
         super.viewDidLoad()
         
         let params: [String:AnyObject] = ["client_id":AnnictApiService.ClientId,
-                                         "response_type":"code",
-                                         "redirect_uri":AnnictApiService.RedirectUri,
-                                         "scope":"read+write"]
+                                          "response_type":"code",
+                                          "redirect_uri":AnnictApiService.RedirectUri,
+                                          "scope":"read+write"]
         webView.loadRequest(.OAuthAuthorize, queryParams: params)
     }
     
@@ -49,8 +49,9 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
                     Keychain()["accessToken"] = accessToken
                 }
                 
-                }, onError: { (e) in
-                    print(e)
+                }, onError: {[weak self] (e) in
+                    let alert = UIAlertController(e: e)
+                    self?.presentViewController(alert, animated: true, completion: nil)
                 }, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
             
             
