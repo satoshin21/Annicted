@@ -23,7 +23,7 @@ class AnnictApiService {
     static var OAuthAuthorize = "/oauth/authorize"
     
     static var RedirectUri = "https://jp.hatenadiary.satoshin21/redirect_uri"
-
+    
     
     enum ResourcePath: String {
         case OAuthAuthorize = "/oauth/authorize"    // 認証ページ
@@ -63,4 +63,8 @@ extension UIWebView {
         
         loadRequest(NSURLRequest(URL: url))
     }
+}
+
+enum AnnictErrorType: ErrorType {
+    case ParseError
 }

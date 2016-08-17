@@ -11,6 +11,7 @@
 		632008DF1D621FF6006E9470 /* UIAlertController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632008DE1D621FF6006E9470 /* UIAlertController+Error.swift */; };
 		63592DBB1D62ECB80027915F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63592DBA1D62ECB80027915F /* AuthViewController.swift */; };
 		63592DBD1D62ED8A0027915F /* AnnictTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63592DBC1D62ED8A0027915F /* AnnictTabbarController.swift */; };
+		63592DBF1D62F23D0027915F /* MyProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63592DBE1D62F23D0027915F /* MyProgramsViewController.swift */; };
 		63B788F31D6203A600AE96B4 /* MyProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */; };
 		63B788F51D6203EA00AE96B4 /* MyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F41D6203EA00AE96B4 /* MyProgram.swift */; };
 		63B788F71D6207E800AE96B4 /* AnnictDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */; };
@@ -27,6 +28,7 @@
 		632008DE1D621FF6006E9470 /* UIAlertController+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Error.swift"; sourceTree = "<group>"; };
 		63592DBA1D62ECB80027915F /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		63592DBC1D62ED8A0027915F /* AnnictTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictTabbarController.swift; sourceTree = "<group>"; };
+		63592DBE1D62F23D0027915F /* MyProgramsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewController.swift; sourceTree = "<group>"; };
 		63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewModel.swift; sourceTree = "<group>"; };
 		63B788F41D6203EA00AE96B4 /* MyProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgram.swift; sourceTree = "<group>"; };
 		63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictDateTransform.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				63592DBA1D62ECB80027915F /* AuthViewController.swift */,
 				632008DE1D621FF6006E9470 /* UIAlertController+Error.swift */,
 				63592DBC1D62ED8A0027915F /* AnnictTabbarController.swift */,
+				63592DBE1D62F23D0027915F /* MyProgramsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				632008DF1D621FF6006E9470 /* UIAlertController+Error.swift in Sources */,
 				C11D3F401D3FE8D300869CA5 /* AnnictApiService.swift in Sources */,
 				63592DBD1D62ED8A0027915F /* AnnictTabbarController.swift in Sources */,
+				63592DBF1D62F23D0027915F /* MyProgramsViewController.swift in Sources */,
 				63B788F71D6207E800AE96B4 /* AnnictDateTransform.swift in Sources */,
 				C1EAB9A61D24391400BDDC70 /* AppDelegate.swift in Sources */,
 				63B788F51D6203EA00AE96B4 /* MyProgram.swift in Sources */,

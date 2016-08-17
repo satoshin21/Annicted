@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Annict Tabbar Controller-->
         <scene sceneID="4QB-q3-IEl">
             <objects>
-                <tabBarController id="W54-Qm-syY" sceneMemberID="viewController">
+                <tabBarController id="W54-Qm-syY" customClass="AnnictTabbarController" customModule="Annicted" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="sIv-e2-g1R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-71" y="456"/>
         </scene>
-        <!--Root View Controller-->
+        <!--放送予定-->
         <scene sceneID="VoI-Dy-53H">
             <objects>
-                <tableViewController id="CpE-Vr-z69" sceneMemberID="viewController">
+                <tableViewController id="CpE-Vr-z69" customClass="MyProgramsViewController" customModule="Annicted" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XeK-C6-gU1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="CpE-Vr-z69" id="dl5-ze-4De"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="zHD-OG-5Ve"/>
+                    <navigationItem key="navigationItem" title="放送予定" id="zHD-OG-5Ve"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hU0-sk-OTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

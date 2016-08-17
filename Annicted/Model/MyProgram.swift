@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import RealmSwift
 import ObjectMapper
 
-class MyProgram {
-    var id: Int!
-    var startedAt: NSDate?
-    var isRebroadcast: Bool!
-    var channelId: Int!
-    var channelName: String!
+class MyProgram: Object {
+    dynamic var id: Int = 0
+    dynamic var startedAt: NSDate?
+    dynamic var isRebroadcast: Bool = false
+    dynamic var channelId: Int = 0
+    dynamic var channelName: String = ""
     // var works: [Work]
     // var episodes: [Episode]
     
-    required init(_ map: Map) {
+    required convenience init?(_ map: Map) {
+        self.init()
         mapping(map)
+    }
+    
+    override class func primaryKey() -> String {
+        return "id"
     }
 }
 

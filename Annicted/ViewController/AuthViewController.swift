@@ -24,6 +24,8 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "認証"
+        
         let params: [String:AnyObject] = ["client_id":AnnictApiService.ClientId,
                                           "response_type":"code",
                                           "redirect_uri":AnnictApiService.RedirectUri,
@@ -43,11 +45,12 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
                 params["code"] = code
             }
             
-            requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { (response, responseObject) in
+            requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { [weak self](response, responseObject) in
                 
                 if let dict = responseObject as? [String:AnyObject],let accessToken = dict["access_token"] as? String {
                     Keychain()["accessToken"] = accessToken
                 }
+                self?.dismissViewControllerAnimated(true, completion: nil)
                 
                 }, onError: {[weak self] (e) in
                     let alert = UIAlertController(e: e)
