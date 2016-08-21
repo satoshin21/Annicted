@@ -10,12 +10,17 @@ import RxSwift
 import ReactiveRealm
 import RealmSwift
 import RxAlamofire
+import RxCocoa
 import SwiftyJSON
 import KeychainAccess
 
 class MyProgramsViewModel {
     
     let myPrograms: Observable<Results<MyProgram>>
+    
+    let onLoading = Variable<Bool>(false)
+    
+    let disposeBag = DisposeBag()
     
     init () {
         do {
@@ -24,16 +29,24 @@ class MyProgramsViewModel {
         } catch let e {
             fatalError("MyProgramsViewModel initialized error: (\(e))")
         }
+        
+        onLoading
+            .asDriver()
+            .drive(UIApplication.sharedApplication().rx_networkActivityIndicatorVisible).addDisposableTo(disposeBag)
     }
     
     func requestMyPrograms() -> Observable<JSON> {
+        
         guard let accessToken = Keychain()["accessToken"] else {
             return Observable.error(AnnictErrorType.ParseError)
         }
         
+        onLoading.value = true
         let url = AnnictApiService.ResourcePath.MePrograms.path
         let params: [String:AnyObject] = ["access_token":accessToken]
-        return requestJSON(.GET, url, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).map({JSON($0.1)})
         
+        return requestJSON(.GET, url, parameters: params, encoding: .URLEncodedInURL, headers: nil)
+            .observeOn(MainScheduler.instance).map({JSON($0.1)}).doOnCompleted({ [weak self] _ in self?.onLoading.value = false})
     }
+    
 }

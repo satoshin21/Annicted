@@ -21,7 +21,8 @@ extension UIAlertController {
     }
     
     convenience init(errorTitle: String,errorMessage: String? = nil) {
-        self.init(title: errorMessage, message: errorMessage, preferredStyle: .Alert)
+        let title = errorTitle.isEmpty ? UnexpectedErrorTitle : errorTitle
+        self.init(title: title, message: errorMessage, preferredStyle: .Alert)
         addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
     }
 }

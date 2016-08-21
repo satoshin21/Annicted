@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import KeychainAccess
 
 class MyProgramsViewController: UITableViewController {
@@ -18,7 +19,6 @@ class MyProgramsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         reloadData()
     }
     
@@ -27,17 +27,10 @@ class MyProgramsViewController: UITableViewController {
             return
         }
         
-        viewModel.requestMyPrograms().subscribe(onNext: { (json) in
-            
-            print(json.rawString()!)
-            
-            }, onError: {[weak self] (error) in
-                let alert = UIAlertController(e: error)
-                self?.presentViewController(alert, animated: true, completion: nil)
-            }, onCompleted: { 
-                
-        }) { 
-            
+        viewModel.requestMyPrograms().subscribeError {[weak self]  (error) in
+            let alert = UIAlertController(e: error)
+            self?.presentViewController(alert, animated: true, completion: nil)
             }.addDisposableTo(disposeBag)
+        
     }
 }

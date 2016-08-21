@@ -2,7 +2,7 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'Annicted' do
+def pod_install
     pod 'Alamofire'
     pod 'RxSwift'
     pod 'RxCocoa'
@@ -11,6 +11,10 @@ target 'Annicted' do
     pod 'KeychainAccess'
     pod 'ReactiveRealm'
     pod 'SwiftyJSON'
+end
+
+target 'Annicted' do
+    pod_install
 end
 
 plugin 'cocoapods-keys', {
