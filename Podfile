@@ -9,7 +9,7 @@ def pod_install
     pod 'RxAlamofire'
     pod 'ObjectMapper'
     pod 'KeychainAccess'
-    pod 'ReactiveRealm'
+    pod 'RxRealm'
     pod 'SwiftyJSON'
 end
 
