@@ -26,9 +26,9 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
         
         title = "認証"
         
-        let params: [String:AnyObject] = ["client_id":AnnictApiService.ClientId,
+        let params: [String:AnyObject] = ["client_id":AnnictApiConst.ClientId,
                                           "response_type":"code",
-                                          "redirect_uri":AnnictApiService.RedirectUri,
+                                          "redirect_uri":AnnictApiConst.RedirectUri,
                                           "scope":"read+write"]
         webView.loadRequest(.OAuthAuthorize, queryParams: params)
     }
@@ -37,10 +37,10 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
         if let query = request.URL?.queryDictionary where request.URL?.host == "jp.hatenadiary.satoshin21" {
             
             var params = [String:AnyObject]()
-            params["client_id"] = AnnictApiService.ClientId
-            params["client_secret"] = AnnictApiService.ClientSecret
+            params["client_id"] = AnnictApiConst.ClientId
+            params["client_secret"] = AnnictApiConst.ClientSecret
             params["grant_type"] = "authorization_code"
-            params["redirect_uri"] = AnnictApiService.RedirectUri
+            params["redirect_uri"] = AnnictApiConst.RedirectUri
             if let code = query["code"] {
                 params["code"] = code
             }

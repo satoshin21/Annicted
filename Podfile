@@ -11,6 +11,9 @@ def pod_install
     pod 'KeychainAccess'
     pod 'RxRealm'
     pod 'SwiftyJSON'
+    pod 'APIKit'
+    pod 'Himotoki'
+    pod 'WebLinking'
 end
 
 target 'Annicted' do

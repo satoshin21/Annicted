@@ -17,7 +17,7 @@ import ObjectMapper
 
 class MyProgramsViewModel {
     
-    let myPrograms: Observable<(Results<MyProgram>)>
+    let myPrograms: Observable<(Results<MyProgramOld>)>
     
     let onLoading = Variable<Bool>(false)
     
@@ -26,7 +26,7 @@ class MyProgramsViewModel {
     init () {
         do {
             let realm = try Realm()
-            myPrograms = realm.objects(MyProgram).asObservableChangeset().map({$0.0})
+            myPrograms = realm.objects(MyProgramOld).asObservableChangeset().map({$0.0})
         } catch let e {
             fatalError("MyProgramsViewModel initialized error: (\(e))")
         }
@@ -42,7 +42,7 @@ class MyProgramsViewModel {
             return Observable.error(AnnictErrorType.ParseError)
         }
         
-        onLoading.value = true
+        onLoading.value = true 
         let url = AnnictApiService.ResourcePath.MePrograms.path
         let params: [String:AnyObject] = ["access_token":accessToken]
         
@@ -51,7 +51,7 @@ class MyProgramsViewModel {
                 guard let programs = json["programs"].array else {
                     return
                 }
-                let mapper = Mapper<MyProgram>()
+                let mapper = Mapper<MyProgramOld>()
                 do {
                     let realm = try Realm()
                     realm.beginWrite()

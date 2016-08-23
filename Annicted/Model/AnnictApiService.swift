@@ -13,16 +13,6 @@ import RxCocoa
 import Keys
 
 class AnnictApiService {
-    // client id
-    static var ClientId = AnnictedKeys().annictClientId()
-    
-    static var ClientSecret = AnnictedKeys().annictClientSecret()
-    
-    static var BaseUrl = "https://api.annict.com"
-    
-    static var OAuthAuthorize = "/oauth/authorize"
-    
-    static var RedirectUri = "https://jp.hatenadiary.satoshin21/redirect_uri"
     
     
     enum ResourcePath: String {
@@ -37,7 +27,7 @@ class AnnictApiService {
         case MePrograms     = "/v1/me/programs"     // 放送予定を取得
         
         var path: String {
-            return AnnictApiService.BaseUrl + rawValue
+            return AnnictApiConst.BaseUrl + rawValue
         }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import ObjectMapper
 
-class MyProgram: Object {
+class MyProgramOld: Object {
     dynamic var id: Int = 0
     dynamic var startedAt: NSDate?
     dynamic var isRebroadcast: Bool = false
@@ -29,7 +29,7 @@ class MyProgram: Object {
     }
 }
 
-extension MyProgram: Mappable {
+extension MyProgramOld: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         startedAt <- (map["started_at"],AnnictDateTransform())
