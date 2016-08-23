@@ -7,16 +7,17 @@
 //
 
 import RxSwift
-import ReactiveRealm
+import RxRealm
 import RealmSwift
 import RxAlamofire
 import RxCocoa
 import SwiftyJSON
 import KeychainAccess
+import ObjectMapper
 
 class MyProgramsViewModel {
     
-    let myPrograms: Observable<Results<MyProgram>>
+    let myPrograms: Observable<(Results<MyProgram>)>
     
     let onLoading = Variable<Bool>(false)
     
@@ -25,7 +26,7 @@ class MyProgramsViewModel {
     init () {
         do {
             let realm = try Realm()
-            myPrograms = realm.rx_objects(MyProgram)
+            myPrograms = realm.objects(MyProgram).asObservableChangeset().map({$0.0})
         } catch let e {
             fatalError("MyProgramsViewModel initialized error: (\(e))")
         }
@@ -46,7 +47,22 @@ class MyProgramsViewModel {
         let params: [String:AnyObject] = ["access_token":accessToken]
         
         return requestJSON(.GET, url, parameters: params, encoding: .URLEncodedInURL, headers: nil)
-            .observeOn(MainScheduler.instance).map({JSON($0.1)}).doOnCompleted({ [weak self] _ in self?.onLoading.value = false})
+            .observeOn(MainScheduler.instance).map({JSON($0.1)}).doOnCompleted({ [weak self] _ in self?.onLoading.value = false}).doOnNext({ (json) in
+                guard let programs = json["programs"].array else {
+                    return
+                }
+                let mapper = Mapper<MyProgram>()
+                do {
+                    let realm = try Realm()
+                    realm.beginWrite()
+                    
+                    programs
+                        .flatMap({mapper.map($0.dictionaryObject)})
+                        .forEach({realm.add($0, update: true)})
+                    try realm.commitWrite()
+                } catch {}
+                
+            })
     }
     
 }

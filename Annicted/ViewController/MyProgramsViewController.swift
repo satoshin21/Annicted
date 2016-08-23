@@ -19,6 +19,15 @@ class MyProgramsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.myPrograms.subscribeNext { (results) in
+            print("result count = \(results.count)")
+        }.addDisposableTo(disposeBag)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         reloadData()
     }
     
