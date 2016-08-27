@@ -11,14 +11,21 @@ import Himotoki
 
 struct MyProgram: Decodable {
     let id: Int
-    let fullName: String
-    let stargazersCount: Int
+    let startedAt: NSDate
+    let isRebroadcast: Bool
+    let channelId: Int
+    let channelName: String
+    let works: Work
+    let episode: Episode
     
     static func decode(e: Extractor) throws -> MyProgram {
-        return try MyProgram(
-            id:              e <| "id",
-            fullName:        e <| "full_name",
-            stargazersCount: e <| "stargazers_count"
-        )
+        
+       return try MyProgram(id: e <| "id",
+                  startedAt: NSDate(iso8601String: e <|? "started_at")!,
+                  isRebroadcast: e <| "is_rebroadcast",
+                  channelId: e <| "channel.id",
+                  channelName: e <| "channel.name",
+                  works: e <| "work",
+                  episode: e <| "episode")
     }
 }

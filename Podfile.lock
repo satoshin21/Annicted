@@ -24,6 +24,7 @@ PODS:
     - RxSwift
   - RxSwift (2.6.0)
   - SwiftyJSON (2.3.2)
+  - Timepiece (0.4.3)
   - WebLinking (1.0.1)
 
 DEPENDENCIES:
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - RxRealm
   - RxSwift
   - SwiftyJSON
+  - Timepiece
   - WebLinking
 
 EXTERNAL SOURCES:
@@ -59,8 +61,9 @@ SPEC CHECKSUMS:
   RxRealm: e1620fd20f5dc0d14c10e92bcc6c2c70bfb03ebe
   RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  Timepiece: b5038887b91d6eb70653173f4270e06b3abeac41
   WebLinking: dfa4aa5dee5ed0284058f4c4d8220ce966f2e3ae
 
-PODFILE CHECKSUM: 0f1942921de13457928e00036e5620c577f77165
+PODFILE CHECKSUM: e83ece2481123ce0e3a09374be12cfcacd968b7c
 
 COCOAPODS: 1.0.1

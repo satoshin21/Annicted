@@ -8,6 +8,7 @@
 
 import Foundation
 import APIKit
+import Himotoki
 
 extension AnnictAPI {
     
@@ -38,6 +39,13 @@ extension AnnictAPI {
         // MARK: PaginationRequestType
         func requestWithPage(page: Int) -> MyProgramsRequest {
             return MyProgramsRequest(query: query, page: page)
+        }
+        
+        func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
+            
+            let elements = try decodeArray(object, rootKeyPath: "programs") as [Response.Element]
+            
+            return Response(elements: elements)
         }
     }
 }

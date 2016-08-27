@@ -19,9 +19,16 @@ extension NSDate {
         self.init(timeInterval:0, sinceDate: date)
     }
     
-    private static func stringToDate(iso8601String: String) -> NSDate? {
+    convenience init?(string: String?,format:  String) {
+        guard let string = string,let date = NSDate.stringToDate(string,format: format) else {
+            return nil
+        }
+        self.init(timeInterval:0, sinceDate: date)
+    }
+    
+    private static func stringToDate(iso8601String: String,format: String = AnnictDateFormat) -> NSDate? {
         let formatter = NSDateFormatter()
-        formatter.dateFormat = AnnictDateFormat
+        formatter.dateFormat = format
         return formatter.dateFromString(iso8601String)
     }
 }
