@@ -12,12 +12,10 @@ import Himotoki
 
 extension AnnictAPI {
     
-    struct MyProgramsRequest: AnnictRequestType,PaginationRequestType {
-        let query: String
+    struct MyProgramsRequest: PaginationRequestType {
         let page: Int
         
-        init(query: String, page: Int = 1) {
-            self.query = query
+        init(page: Int = 1) {
             self.page = page
         }
         
@@ -33,18 +31,16 @@ extension AnnictAPI {
         }
         
         var parameters: AnyObject? {
-            return ["q": query, "page": page]
+            return ["per_page": 50, "page": page]
         }
         
         // MARK: PaginationRequestType
-        func requestWithPage(page: Int) -> MyProgramsRequest {
-            return MyProgramsRequest(query: query, page: page)
+        static func requestWithPage(page: Int) -> MyProgramsRequest {
+            return MyProgramsRequest(page: page)
         }
         
         func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
-            
             let elements = try decodeArray(object, rootKeyPath: "programs") as [Response.Element]
-            
             return Response(elements: elements)
         }
     }

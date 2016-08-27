@@ -9,10 +9,10 @@
 import Foundation
 import APIKit
 
-protocol PaginationRequestType: RequestType {
+protocol PaginationRequestType: AnnictRequestType {
     associatedtype Response: PaginationResponseType
     
     var page: Int { get }
     
-    func requestWithPage(page: Int) -> Self
+    static func requestWithPage(page: Int) -> Self
 }

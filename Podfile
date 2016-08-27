@@ -14,7 +14,6 @@ def pod_install
     pod 'APIKit'
     pod 'Himotoki'
     pod 'WebLinking'
-    pod 'Timepiece'
 end
 
 target 'Annicted' do
