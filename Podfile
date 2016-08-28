@@ -3,17 +3,13 @@ platform :ios, '8.0'
 use_frameworks!
 
 def pod_install
-    pod 'Alamofire'
     pod 'RxSwift'
     pod 'RxCocoa'
-    pod 'RxAlamofire'
-    pod 'ObjectMapper'
-    pod 'KeychainAccess'
-    pod 'RxRealm'
-    pod 'SwiftyJSON'
+    pod 'KeychainAccess' 
     pod 'APIKit'
     pod 'Himotoki'
     pod 'WebLinking'
+    pod 'Action' 
 end
 
 target 'Annicted' do

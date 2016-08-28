@@ -7,62 +7,50 @@
 //
 
 import RxSwift
-import RxRealm
-import RealmSwift
-import RxAlamofire
 import RxCocoa
-import SwiftyJSON
+import APIKit
+import Action
 import KeychainAccess
-import ObjectMapper
+
 
 class MyProgramsViewModel {
+//    let session = Session.sharedSession
     
-    let myPrograms: Observable<(Results<MyProgramOld>)>
+    let refreshTrigger = PublishSubject<Void>()
     
-    let onLoading = Variable<Bool>(false)
+//    let loadNextPageTrigger = PublishSubject<Void>()
+    
+    let myPrograms = Variable<[MyProgram]>([])
+    
+    let error = Variable<ErrorType?>(nil)
     
     let disposeBag = DisposeBag()
     
+    let isLoading = Variable<Bool>(false)
+    
     init () {
-        do {
-            let realm = try Realm()
-            myPrograms = realm.objects(MyProgramOld).asObservableChangeset().map({$0.0})
-        } catch let e {
-            fatalError("MyProgramsViewModel initialized error: (\(e))")
-        }
         
-        onLoading
-            .asDriver()
-            .drive(UIApplication.sharedApplication().rx_networkActivityIndicatorVisible).addDisposableTo(disposeBag)
-    }
-    
-    func requestMyPrograms() -> Observable<JSON> {
-        
-        guard let accessToken = Keychain()["accessToken"] else {
-            return Observable.error(AnnictErrorType.ParseError)
-        }
-        
-        onLoading.value = true 
-        let url = AnnictApiService.ResourcePath.MePrograms.path
-        let params: [String:AnyObject] = ["access_token":accessToken]
-        
-        return requestJSON(.GET, url, parameters: params, encoding: .URLEncodedInURL, headers: nil)
-            .observeOn(MainScheduler.instance).map({JSON($0.1)}).doOnCompleted({ [weak self] _ in self?.onLoading.value = false}).doOnNext({ (json) in
-                guard let programs = json["programs"].array else {
-                    return
-                }
-                let mapper = Mapper<MyProgramOld>()
-                do {
-                    let realm = try Realm()
-                    realm.beginWrite()
+        refreshTrigger
+            .filterHasAccessToken()
+            .filter{!self.isLoading.value}
+            .subscribeNext {[weak self] in
+                self?.isLoading.value = true
+                Session.sharedSession.sendRequest(MyProgramsRequest(page:1), handler: { (result) in
+                    self?.isLoading.value = false
                     
-                    programs
-                        .flatMap({mapper.map($0.dictionaryObject)})
-                        .forEach({realm.add($0, update: true)})
-                    try realm.commitWrite()
-                } catch {}
-                
-            })
+                    switch result {
+                    case .Success(let success):
+                        self?.myPrograms.value.appendContentsOf(success.elements)
+                    case .Failure(let error):
+                        self?.error.value = error
+                    }
+                })
+        }.addDisposableTo(disposeBag)
     }
-    
+}
+
+extension Observable {
+    func filterHasAccessToken() -> Observable {
+        return self.filter{_ in Keychain()["accessToken"] != nil }
+    }
 }

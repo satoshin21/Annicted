@@ -8,7 +8,6 @@
 
 import UIKit
 import Himotoki
-import Timepiece
 
 struct Work: Decodable {
     

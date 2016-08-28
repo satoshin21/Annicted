@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import Alamofire
 import RxSwift
-import RxAlamofire
 import RxCocoa
 import KeychainAccess
 
@@ -45,20 +43,20 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
                 params["code"] = code
             }
             
-            requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { [weak self](response, responseObject) in
-                
-                if let dict = responseObject as? [String:AnyObject],let accessToken = dict["access_token"] as? String {
-                    Keychain()["accessToken"] = accessToken
-                }
-                self?.dismissViewControllerAnimated(true, completion: nil)
-                
-                }, onError: {[weak self] (e) in
-                    let alert = UIAlertController(e: e)
-                    self?.presentViewController(alert, animated: true, completion: nil)
-                }, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
-            
-            
-            return false
+//            requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { [weak self](response, responseObject) in
+//                
+//                if let dict = responseObject as? [String:AnyObject],let accessToken = dict["access_token"] as? String {
+//                    Keychain()["accessToken"] = accessToken
+//                }
+//                self?.dismissViewControllerAnimated(true, completion: nil)
+//                
+//                }, onError: {[weak self] (e) in
+//                    let alert = UIAlertController(e: e)
+//                    self?.presentViewController(alert, animated: true, completion: nil)
+//                }, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
+//            
+//            
+//            return false
         }
         return true
     }

@@ -7,34 +7,34 @@
 //
 
 import UIKit
-import RealmSwift
-import ObjectMapper
-
-class MyProgramOld: Object {
-    dynamic var id: Int = 0
-    dynamic var startedAt: NSDate?
-    dynamic var isRebroadcast: Bool = false
-    dynamic var channelId: Int = 0
-    dynamic var channelName: String = ""
-    // var works: [Work]
-    // var episodes: [Episode]
-    
-    required convenience init?(_ map: Map) {
-        self.init()
-        mapping(map)
-    }
-    
-    override class func primaryKey() -> String {
-        return "id"
-    }
-}
-
-extension MyProgramOld: Mappable {
-    func mapping(map: Map) {
-        id <- map["id"]
-        startedAt <- (map["started_at"],AnnictDateTransform())
-        isRebroadcast <- map["is_rebroadcast"]
-        channelId <- map["channel.id"]
-        channelName <- map["channel.name"]
-    }
-}
+//import RealmSwift
+//import ObjectMapper
+//
+//class MyProgramOld: Object {
+//    dynamic var id: Int = 0
+//    dynamic var startedAt: NSDate?
+//    dynamic var isRebroadcast: Bool = false
+//    dynamic var channelId: Int = 0
+//    dynamic var channelName: String = ""
+//    // var works: [Work]
+//    // var episodes: [Episode]
+//    
+//    required convenience init?(_ map: Map) {
+//        self.init()
+//        mapping(map)
+//    }
+//    
+//    override class func primaryKey() -> String {
+//        return "id"
+//    }
+//}
+//
+//extension MyProgramOld: Mappable {
+//    func mapping(map: Map) {
+//        id <- map["id"]
+//        startedAt <- (map["started_at"],AnnictDateTransform())
+//        isRebroadcast <- map["is_rebroadcast"]
+//        channelId <- map["channel.id"]
+//        channelName <- map["channel.name"]
+//    }
+//}

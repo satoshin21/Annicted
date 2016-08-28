@@ -20,26 +20,16 @@ class MyProgramsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.myPrograms.subscribeNext { (results) in
-            print("result count = \(results.count)")
-        }.addDisposableTo(disposeBag)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        rx_sentMessage(#selector(UIViewController.viewWillAppear))
+            .map{_ in}
+            .bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
         
-        reloadData()
-    }
-    
-    func reloadData() {
-        guard let _ = Keychain()["accessToken"] else {
-            return
+        if let refreshControl = refreshControl {
+            refreshControl.rx_controlEvent(.ValueChanged).bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
         }
         
-        viewModel.requestMyPrograms().subscribeError {[weak self]  (error) in
-            let alert = UIAlertController(e: error)
-            self?.presentViewController(alert, animated: true, completion: nil)
-            }.addDisposableTo(disposeBag)
-        
+        viewModel.myPrograms.asObservable().bindTo(tableView.rx_itemsWithCellIdentifier("CellIdentifier")) { _, riderName, cell -> Void in
+            cell.textLabel?.text = riderName
+            }.addDisposa
     }
 }

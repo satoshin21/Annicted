@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import ObjectMapper
+//import ObjectMapper
 
-class AnnictDateTransform: DateTransform {
-    override func transformFromJSON(value: AnyObject?) -> NSDate? {
-        if let dateStr = value as? String {
-            return NSDate(iso8601String: dateStr)
-        }
-        return nil
-    }
-}
+//class AnnictDateTransform: DateTransform {
+//    override func transformFromJSON(value: AnyObject?) -> NSDate? {
+//        if let dateStr = value as? String {
+//            return NSDate(iso8601String: dateStr)
+//        }
+//        return nil
+//    }
+//}

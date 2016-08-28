@@ -10,6 +10,7 @@ import APIKit
 import Himotoki
 import WebLinking
 import Keys
+import KeychainAccess
 
 class AnnictApiConst {
     // client id
@@ -30,6 +31,10 @@ protocol AnnictRequestType: RequestType {
 extension AnnictRequestType {
     var baseURL: NSURL {
         return NSURL(string: AnnictApiConst.BaseUrl)!
+    }
+    
+    var requestToken: String? {
+        return Keychain()["accessToken"]
     }
 }
 

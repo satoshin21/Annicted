@@ -46,6 +46,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="放送予定" id="zHD-OG-5Ve"/>
+                    <connections>
+                        <outlet property="tableView" destination="XeK-C6-gU1" id="Ltc-E1-Lda"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hU0-sk-OTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

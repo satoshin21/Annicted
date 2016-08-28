@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxAlamofire
 import RxSwift
 import RxCocoa
 import Keys
