@@ -51,6 +51,7 @@
 		63B788F41D6203EA00AE96B4 /* MyProgramOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramOld.swift; sourceTree = "<group>"; };
 		63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictDateTransform.swift; sourceTree = "<group>"; };
 		63B788F81D62089400AE96B4 /* NSDate+Annict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Annict.swift"; sourceTree = "<group>"; };
+		63D32F601D7489500016929A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictApiService.swift; sourceTree = "<group>"; };
 		C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Easy.swift"; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		C1EAB9991D24391400BDDC70 = {
 			isa = PBXGroup;
 			children = (
+				63D32F601D7489500016929A /* MyPlayground.playground */,
 				C1EAB9A41D24391400BDDC70 /* Annicted */,
 				C1EAB9A31D24391400BDDC70 /* Products */,
 				A48BCD882893564E594DAEA0 /* Pods */,

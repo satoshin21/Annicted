@@ -24,12 +24,42 @@ class MyProgramsViewController: UITableViewController {
             .map{_ in}
             .bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
         
-        if let refreshControl = refreshControl {
-            refreshControl.rx_controlEvent(.ValueChanged).bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
-        }
+        let refreshControl = UIRefreshControl()
+        refreshControl.rx_controlEvent(.ValueChanged).bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
+        viewModel.isLoading.asDriver().drive(refreshControl.rx_refreshing).addDisposableTo(disposeBag)
+        self.refreshControl = refreshControl
         
-        viewModel.myPrograms.asObservable().bindTo(tableView.rx_itemsWithCellIdentifier("CellIdentifier")) { _, riderName, cell -> Void in
-            cell.textLabel?.text = riderName
-            }.addDisposa
+        tableView.delegate = nil
+        tableView.dataSource = nil
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        viewModel.myPrograms.asObservable().bindTo(tableView.rx_itemsWithCellIdentifier("Cell"))(configureCell: { (index, myProgram, cell) in
+            
+            cell.textLabel?.text = myProgram.work.title
+            
+            }).addDisposableTo(disposeBag)
+        
+        viewModel.error.asObservable().filter({$0 != nil}).map({$0!}).subscribeNext {[weak self] (e) in
+            let alert = UIAlertController(e: e)
+            self?.presentViewController(alert, animated: true, completion: nil)
+        }.addDisposableTo(disposeBag)
+    }
+}
+
+	public protocol OptionalType {
+    	    associatedtype Wrapped
+    	    var value: Wrapped? { get }
+    	}
+
+	extension Optional: OptionalType {
+	    /// Cast `Optional<Wrapped>` to `Wrapped?`
+	    public var value: Wrapped? {
+	        return self
+	    }
+	}
+
+extension Observable where Element: OptionalType {
+    
+    func unwrap() {
+        return
     }
 }

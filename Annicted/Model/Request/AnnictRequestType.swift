@@ -18,7 +18,7 @@ class AnnictApiConst {
     
     static let ClientSecret = AnnictedKeys().annictClientSecret()
     
-    static let BaseUrl = "https://api.annict.com"
+    static let BaseUrl = "https://api.annict.com/v1"
     
     static let OAuthAuthorize = "/oauth/authorize"
     

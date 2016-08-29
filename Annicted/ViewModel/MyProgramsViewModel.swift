@@ -14,11 +14,10 @@ import KeychainAccess
 
 
 class MyProgramsViewModel {
-//    let session = Session.sharedSession
     
     let refreshTrigger = PublishSubject<Void>()
     
-//    let loadNextPageTrigger = PublishSubject<Void>()
+    var pageIndex = 1
     
     let myPrograms = Variable<[MyProgram]>([])
     
@@ -34,18 +33,26 @@ class MyProgramsViewModel {
             .filterHasAccessToken()
             .filter{!self.isLoading.value}
             .subscribeNext {[weak self] in
-                self?.isLoading.value = true
-                Session.sharedSession.sendRequest(MyProgramsRequest(page:1), handler: { (result) in
+                guard let weakSelf = self else {
+                    return
+                }
+                weakSelf.pageIndex = 1
+                weakSelf.isLoading.value = true
+                Session.sharedSession.sendRequest(MyProgramsRequest(page:weakSelf.pageIndex), handler: { (result) in
                     self?.isLoading.value = false
-                    
+                    result
                     switch result {
                     case .Success(let success):
-                        self?.myPrograms.value.appendContentsOf(success.elements)
+                        self?.myPrograms.value = success.elements
                     case .Failure(let error):
                         self?.error.value = error
                     }
                 })
         }.addDisposableTo(disposeBag)
+        
+        isLoading.asDriver()
+            .drive(UIApplication.sharedApplication().rx_networkActivityIndicatorVisible)
+            .addDisposableTo(disposeBag)
     }
 }
 

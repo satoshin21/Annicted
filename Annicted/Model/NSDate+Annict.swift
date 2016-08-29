@@ -8,7 +8,7 @@
 
 import Foundation
 
-let AnnictDateFormat = "yyyy-MM-ddTHH:mm:ssZ"
+let AnnictDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 
 extension NSDate {
     

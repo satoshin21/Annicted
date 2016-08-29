@@ -9,12 +9,15 @@
 import Foundation
 import APIKit
 import Himotoki
+import KeychainAccess
 
 struct MyProgramsRequest: PaginationRequestType {
     let page: Int
+    let accessToken: String
     
     init(page: Int = 1) {
         self.page = page
+        accessToken = Keychain()["accessToken"]!
     }
     
     // MARK: RequestType
@@ -29,7 +32,7 @@ struct MyProgramsRequest: PaginationRequestType {
     }
     
     var parameters: AnyObject? {
-        return ["per_page": 50, "page": page]
+        return ["per_page": 50, "page": page,"access_token":accessToken]
     }
     
     // MARK: PaginationRequestType

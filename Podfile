@@ -9,7 +9,8 @@ def pod_install
     pod 'APIKit'
     pod 'Himotoki'
     pod 'WebLinking'
-    pod 'Action' 
+    pod 'Action'
+    pod 'SwiftDate'
 end
 
 target 'Annicted' do

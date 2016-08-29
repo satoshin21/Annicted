@@ -11,6 +11,7 @@ PODS:
   - RxCocoa (2.6.0):
     - RxSwift (~> 2.5)
   - RxSwift (2.6.0)
+  - SwiftDate (3.0.8)
   - WebLinking (1.0.1)
 
 DEPENDENCIES:
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
   - RxCocoa
   - RxSwift
+  - SwiftDate
   - WebLinking
 
 EXTERNAL SOURCES:
@@ -36,8 +38,9 @@ SPEC CHECKSUMS:
   Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
   RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
   RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   WebLinking: dfa4aa5dee5ed0284058f4c4d8220ce966f2e3ae
 
-PODFILE CHECKSUM: 5b534872d448f57ae49562be2f02dc6976eb3dce
+PODFILE CHECKSUM: 856f4a806c02f79fcee3a1f87cd8e8b28a04e4ee
 
 COCOAPODS: 1.0.1
