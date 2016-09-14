@@ -11,7 +11,7 @@ import RxCocoa
 import APIKit
 import Action
 import KeychainAccess
-
+import Himotoki
 
 class MyProgramsViewModel {
     
@@ -40,12 +40,19 @@ class MyProgramsViewModel {
                 weakSelf.isLoading.value = true
                 Session.sharedSession.sendRequest(MyProgramsRequest(page:weakSelf.pageIndex), handler: { (result) in
                     self?.isLoading.value = false
-                    result
+                    
                     switch result {
                     case .Success(let success):
                         self?.myPrograms.value = success.elements
                     case .Failure(let error):
-                        self?.error.value = error
+                        switch error {
+                        case .ResponseError(let responseError as DecodeError):
+                            print(responseError.description)
+                            self?.error.value = responseError
+                        default:
+                            self?.error.value = error
+                            
+                        }
                     }
                 })
         }.addDisposableTo(disposeBag)

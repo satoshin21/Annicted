@@ -15,7 +15,7 @@ struct Episode: Decodable {
     let number: String
     let numberText: String
     let sortNumber: Int
-    let title: String
+    let title: String?
     let recordsCount: Int
     
     static func decode(e: Extractor) throws -> Episode {
@@ -23,7 +23,7 @@ struct Episode: Decodable {
                            number: e <| "number",
                            numberText: e <| "number_text",
                            sortNumber: e <| "sort_number",
-                           title: e <| "title",
+                           title: e <|? "title",
                            recordsCount: e <| "records_count")
     }
 }

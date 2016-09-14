@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		392BFC68DCA200A2E658649F /* Pods_Annicted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */; };
+		630473A41D8716250058A622 /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630473A31D8716250058A622 /* AuthorizeRequest.swift */; };
 		630853501D6CB4A500AB7690 /* AnnictAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308534F1D6CB4A500AB7690 /* AnnictAPI.swift */; };
 		630853521D6CB53000AB7690 /* AnnictRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630853511D6CB53000AB7690 /* AnnictRequestType.swift */; };
 		630853561D6CB82A00AB7690 /* PaginationResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630853551D6CB82A00AB7690 /* PaginationResponseType.swift */; };
@@ -22,8 +23,6 @@
 		63592DBD1D62ED8A0027915F /* AnnictTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63592DBC1D62ED8A0027915F /* AnnictTabbarController.swift */; };
 		63592DBF1D62F23D0027915F /* MyProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63592DBE1D62F23D0027915F /* MyProgramsViewController.swift */; };
 		63B788F31D6203A600AE96B4 /* MyProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */; };
-		63B788F51D6203EA00AE96B4 /* MyProgramOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F41D6203EA00AE96B4 /* MyProgramOld.swift */; };
-		63B788F71D6207E800AE96B4 /* AnnictDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */; };
 		63B788F91D62089400AE96B4 /* NSDate+Annict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B788F81D62089400AE96B4 /* NSDate+Annict.swift */; };
 		C11D3F401D3FE8D300869CA5 /* AnnictApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */; };
 		C19134881D55C3D6004B9E25 /* NSURL+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */; };
@@ -34,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630473A31D8716250058A622 /* AuthorizeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
 		6308534F1D6CB4A500AB7690 /* AnnictAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictAPI.swift; sourceTree = "<group>"; };
 		630853511D6CB53000AB7690 /* AnnictRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictRequestType.swift; sourceTree = "<group>"; };
 		630853551D6CB82A00AB7690 /* PaginationResponseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationResponseType.swift; sourceTree = "<group>"; };
@@ -48,8 +48,6 @@
 		63592DBC1D62ED8A0027915F /* AnnictTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictTabbarController.swift; sourceTree = "<group>"; };
 		63592DBE1D62F23D0027915F /* MyProgramsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewController.swift; sourceTree = "<group>"; };
 		63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewModel.swift; sourceTree = "<group>"; };
-		63B788F41D6203EA00AE96B4 /* MyProgramOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramOld.swift; sourceTree = "<group>"; };
-		63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictDateTransform.swift; sourceTree = "<group>"; };
 		63B788F81D62089400AE96B4 /* NSDate+Annict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Annict.swift"; sourceTree = "<group>"; };
 		63D32F601D7489500016929A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +82,7 @@
 				630853511D6CB53000AB7690 /* AnnictRequestType.swift */,
 				630853571D6CB93D00AB7690 /* PaginationRequestType.swift */,
 				630853591D6CB9AA00AB7690 /* MyProgramsRequest.swift */,
+				630473A31D8716250058A622 /* AuthorizeRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -127,8 +126,6 @@
 				6308534E1D6CB47800AB7690 /* Request */,
 				C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */,
 				C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */,
-				63B788F41D6203EA00AE96B4 /* MyProgramOld.swift */,
-				63B788F61D6207E800AE96B4 /* AnnictDateTransform.swift */,
 				63B788F81D62089400AE96B4 /* NSDate+Annict.swift */,
 			);
 			path = Model;
@@ -318,15 +315,14 @@
 				C11D3F401D3FE8D300869CA5 /* AnnictApiService.swift in Sources */,
 				634367761D718E3D00855271 /* Work.swift in Sources */,
 				63592DBD1D62ED8A0027915F /* AnnictTabbarController.swift in Sources */,
+				630473A41D8716250058A622 /* AuthorizeRequest.swift in Sources */,
 				6308535E1D6CBA6600AB7690 /* MyProgram.swift in Sources */,
 				630853561D6CB82A00AB7690 /* PaginationResponseType.swift in Sources */,
 				634367781D718E7E00855271 /* Episode.swift in Sources */,
 				63592DBF1D62F23D0027915F /* MyProgramsViewController.swift in Sources */,
 				630853521D6CB53000AB7690 /* AnnictRequestType.swift in Sources */,
 				6308535A1D6CB9AA00AB7690 /* MyProgramsRequest.swift in Sources */,
-				63B788F71D6207E800AE96B4 /* AnnictDateTransform.swift in Sources */,
 				C1EAB9A61D24391400BDDC70 /* AppDelegate.swift in Sources */,
-				63B788F51D6203EA00AE96B4 /* MyProgramOld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

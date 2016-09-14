@@ -13,15 +13,5 @@ protocol PaginationResponseType {
     
     var elements: [Element] { get }
     
-    init(elements: [Element]/*, previousPage: Int?, nextPage: Int?*/)
-}
-
-extension PaginationResponseType {
-//    var hasPreviousPage: Bool {
-//        return previousPage != nil
-//    }
-//    
-//    var hasNextPage: Bool {
-//        return nextPage != nil
-//    }
+    init(elements: [Element])
 }

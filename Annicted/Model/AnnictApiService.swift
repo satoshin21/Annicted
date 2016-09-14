@@ -24,10 +24,6 @@ class AnnictApiService {
         case MeStatuses     = "/v1/me/statuses"     // 作品のステータス設定
         case MeWorks        = "/v1/me/works"        // 自分がステータスを設定している作品の情報
         case MePrograms     = "/v1/me/programs"     // 放送予定を取得
-        
-        var path: String {
-            return AnnictApiConst.BaseUrl + rawValue
-        }
     }
 }
 
@@ -36,7 +32,8 @@ class AnnictApiService {
 extension UIWebView {
     
     func loadRequest(resourcePath: AnnictApiService.ResourcePath,queryParams: [String:AnyObject]) {
-        guard let url = NSURL(string: resourcePath.path) else {
+        
+        guard let url = NSURL(string: AnnictApiConst.BaseUrl + resourcePath.rawValue) else {
             return
         }
         

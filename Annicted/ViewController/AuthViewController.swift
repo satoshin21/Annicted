@@ -9,7 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Keys
 import KeychainAccess
+import APIKit
 
 class AuthViewController: UIViewController,UIWebViewDelegate {
     
@@ -32,31 +34,20 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if let query = request.URL?.queryDictionary where request.URL?.host == "jp.hatenadiary.satoshin21" {
+
+        if let absoluteUrl = request.URL?.absoluteString where absoluteUrl.hasPrefix(AnnictApiConst.RedirectUri),
+            let query = request.URL?.queryDictionary,let code = query["code"] {
             
-            var params = [String:AnyObject]()
-            params["client_id"] = AnnictApiConst.ClientId
-            params["client_secret"] = AnnictApiConst.ClientSecret
-            params["grant_type"] = "authorization_code"
-            params["redirect_uri"] = AnnictApiConst.RedirectUri
-            if let code = query["code"] {
-                params["code"] = code
-            }
-            
-//            requestJSON(.POST, AnnictApiService.ResourcePath.OAuthToken.path, parameters: params, encoding: .URLEncodedInURL, headers: nil).observeOn(MainScheduler.instance).subscribe(onNext: { [weak self](response, responseObject) in
-//                
-//                if let dict = responseObject as? [String:AnyObject],let accessToken = dict["access_token"] as? String {
-//                    Keychain()["accessToken"] = accessToken
-//                }
-//                self?.dismissViewControllerAnimated(true, completion: nil)
-//                
-//                }, onError: {[weak self] (e) in
-//                    let alert = UIAlertController(e: e)
-//                    self?.presentViewController(alert, animated: true, completion: nil)
-//                }, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
-//            
-//            
-//            return false
+            Session.sharedSession.sendRequest(AuthorizeRequest(code:code), callbackQueue: CallbackQueue.Main, handler: {[weak self] (result) in
+                
+                switch result {
+                case .Success:
+                    self?.dismissViewControllerAnimated(true, completion: nil)
+                case .Failure(let error):
+                    let alert = UIAlertController(e: error)
+                    self?.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
         }
         return true
     }

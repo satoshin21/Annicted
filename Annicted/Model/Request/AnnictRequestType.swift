@@ -18,7 +18,7 @@ class AnnictApiConst {
     
     static let ClientSecret = AnnictedKeys().annictClientSecret()
     
-    static let BaseUrl = "https://api.annict.com/v1"
+    static let BaseUrl = "https://api.annict.com"
     
     static let OAuthAuthorize = "/oauth/authorize"
     
@@ -26,15 +26,22 @@ class AnnictApiConst {
 }
 
 protocol AnnictRequestType: RequestType {
+    
+    var resourcePath: AnnictApiService.ResourcePath { get }
 }
 
 extension AnnictRequestType {
+    
     var baseURL: NSURL {
         return NSURL(string: AnnictApiConst.BaseUrl)!
     }
     
     var requestToken: String? {
         return Keychain()["accessToken"]
+    }
+    
+    var path: String {
+        return resourcePath.rawValue
     }
 }
 

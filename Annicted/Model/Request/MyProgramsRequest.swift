@@ -27,8 +27,8 @@ struct MyProgramsRequest: PaginationRequestType {
         return .GET
     }
     
-    var path: String {
-        return "/me/programs"
+    var resourcePath: AnnictApiService.ResourcePath {
+        return .MePrograms
     }
     
     var parameters: AnyObject? {
@@ -41,6 +41,7 @@ struct MyProgramsRequest: PaginationRequestType {
     }
     
     func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
+        print(object)
         let elements = try decodeArray(object, rootKeyPath: "programs") as [Response.Element]
         return Response(elements: elements)
     }
