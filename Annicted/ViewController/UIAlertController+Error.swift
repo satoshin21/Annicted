@@ -12,7 +12,7 @@ let UnexpectedErrorTitle = "予期しないエラーが発生しました"
 
 extension UIAlertController {
     
-    convenience init(e: ErrorType) {
+    convenience init(e: Error) {
         self.init(error:e as NSError)
     }
     
@@ -22,7 +22,7 @@ extension UIAlertController {
     
     convenience init(errorTitle: String,errorMessage: String? = nil) {
         let title = errorTitle.isEmpty ? UnexpectedErrorTitle : errorTitle
-        self.init(title: title, message: errorMessage, preferredStyle: .Alert)
-        addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.init(title: title, message: errorMessage, preferredStyle: .alert)
+        addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     }
 }

@@ -7,5 +7,5 @@
 //
 
 class AnnictAPI {
-    private init() {}
+    fileprivate init() {}
 }

@@ -14,5 +14,5 @@ protocol PaginationRequestType: AnnictRequestType {
     
     var page: Int { get }
     
-    static func requestWithPage(page: Int) -> Self
+    static func requestWithPage(_ page: Int) -> Self
 }

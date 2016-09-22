@@ -31,7 +31,7 @@ class MyProgramsViewController: UITableViewController {
         
         tableView.delegate = nil
         tableView.dataSource = nil
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         viewModel.myPrograms.asObservable().bindTo(tableView.rx_itemsWithCellIdentifier("Cell"))(configureCell: { (index, myProgram, cell) in
             
             cell.textLabel?.text = myProgram.work.title

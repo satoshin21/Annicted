@@ -32,8 +32,8 @@ protocol AnnictRequestType: RequestType {
 
 extension AnnictRequestType {
     
-    var baseURL: NSURL {
-        return NSURL(string: AnnictApiConst.BaseUrl)!
+    var baseURL: URL {
+        return URL(string: AnnictApiConst.BaseUrl)!
     }
     
     var requestToken: String? {
@@ -46,7 +46,7 @@ extension AnnictRequestType {
 }
 
 extension AnnictRequestType where Response: Decodable {
-    func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
+    func responseFromObject(_ object: AnyObject, URLResponse: HTTPURLResponse) throws -> Response {
         return try decodeValue(object)
     }
 }

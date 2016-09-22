@@ -10,25 +10,25 @@ import Foundation
 
 let AnnictDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 
-extension NSDate {
+extension Date {
     
-    convenience init?(iso8601String: String?) {
-        guard let iso8601String = iso8601String,let date = NSDate.stringToDate(iso8601String) else {
+    init?(iso8601String: String?) {
+        guard let iso8601String = iso8601String,let date = Date.stringToDate(iso8601String) else {
             return nil
         }
-        self.init(timeInterval:0, sinceDate: date)
+        (self as NSDate).init(timeInterval:0, since: date)
     }
     
-    convenience init?(string: String?,format:  String) {
-        guard let string = string,let date = NSDate.stringToDate(string,format: format) else {
+    init?(string: String?,format:  String) {
+        guard let string = string,let date = Date.stringToDate(string,format: format) else {
             return nil
         }
-        self.init(timeInterval:0, sinceDate: date)
+        (self as NSDate).init(timeInterval:0, since: date)
     }
     
-    private static func stringToDate(iso8601String: String,format: String = AnnictDateFormat) -> NSDate? {
-        let formatter = NSDateFormatter()
+    fileprivate static func stringToDate(_ iso8601String: String,format: String = AnnictDateFormat) -> Date? {
+        let formatter = DateFormatter()
         formatter.dateFormat = format
-        return formatter.dateFromString(iso8601String)
+        return formatter.date(from: iso8601String)
     }
 }

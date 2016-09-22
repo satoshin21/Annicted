@@ -31,26 +31,26 @@ class AnnictApiService {
 
 extension UIWebView {
     
-    func loadRequest(resourcePath: AnnictApiService.ResourcePath,queryParams: [String:AnyObject]) {
+    func loadRequest(_ resourcePath: AnnictApiService.ResourcePath,queryParams: [String:AnyObject]) {
         
-        guard let url = NSURL(string: AnnictApiConst.BaseUrl + resourcePath.rawValue) else {
+        guard let url = URL(string: AnnictApiConst.BaseUrl + resourcePath.rawValue) else {
             return
         }
         
         loadRequest(url, queryParams: queryParams)
     }
     
-    func loadRequest(url: NSURL,queryParams: [String:AnyObject]) {
+    func loadRequest(_ url: URL,queryParams: [String:AnyObject]) {
         
-        let paramAppendedUrl = "\(url.absoluteString)?\(queryParams.map({"\($0.0)=\($0.1)"}).joinWithSeparator("&"))"
-        guard let url = NSURL(string: paramAppendedUrl) else {
+        let paramAppendedUrl = "\(url.absoluteString)?\(queryParams.map({"\($0.0)=\($0.1)"}).joined(separator: "&"))"
+        guard let url = URL(string: paramAppendedUrl) else {
             return
         }
         
-        loadRequest(NSURLRequest(URL: url))
+        loadRequest(URLRequest(url: url))
     }
 }
 
-enum AnnictErrorType: ErrorType {
-    case ParseError
+enum AnnictErrorType: Error {
+    case parseError
 }

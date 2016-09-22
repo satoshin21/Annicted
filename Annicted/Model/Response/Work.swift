@@ -18,7 +18,7 @@ struct Work: Decodable {
     let mediaText: String
     let seasonName: String
     let seasonNameText: String
-    let releasedOn: NSDate?
+    let releasedOn: Date?
     let releasedOnAbout: String
     let officialSiteUrl: String
     let wikipediaUrl: String
@@ -28,7 +28,7 @@ struct Work: Decodable {
     let watchersCount: Int
     
     
-    static func decode(e: Extractor) throws -> Work {
+    static func decode(_ e: Extractor) throws -> Work {
         return try Work(id:     e <| "id",
              title:             e <| "title",
              titleKana:         e <| "title_kana",

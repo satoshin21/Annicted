@@ -36,11 +36,11 @@ struct MyProgramsRequest: PaginationRequestType {
     }
     
     // MARK: PaginationRequestType
-    static func requestWithPage(page: Int) -> MyProgramsRequest {
+    static func requestWithPage(_ page: Int) -> MyProgramsRequest {
         return MyProgramsRequest(page: page)
     }
     
-    func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
+    func responseFromObject(_ object: AnyObject, URLResponse: HTTPURLResponse) throws -> Response {
         print(object)
         let elements = try decodeArray(object, rootKeyPath: "programs") as [Response.Element]
         return Response(elements: elements)

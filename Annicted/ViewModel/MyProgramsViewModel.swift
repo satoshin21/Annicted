@@ -21,7 +21,7 @@ class MyProgramsViewModel {
     
     let myPrograms = Variable<[MyProgram]>([])
     
-    let error = Variable<ErrorType?>(nil)
+    let error = Variable<Error?>(nil)
     
     let disposeBag = DisposeBag()
     

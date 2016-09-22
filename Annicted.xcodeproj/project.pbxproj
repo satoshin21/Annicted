@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		392BFC68DCA200A2E658649F /* Pods_Annicted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */; };
+		597976048076C6BF980BB4FB /* Pods_Annicted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3A9E93F4B0C2837B535A1 /* Pods_Annicted.framework */; };
 		630473A41D8716250058A622 /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630473A31D8716250058A622 /* AuthorizeRequest.swift */; };
 		630853501D6CB4A500AB7690 /* AnnictAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308534F1D6CB4A500AB7690 /* AnnictAPI.swift */; };
 		630853521D6CB53000AB7690 /* AnnictRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630853511D6CB53000AB7690 /* AnnictRequestType.swift */; };
@@ -33,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1497F159CC1FC8CCBD0A7414 /* Pods-Annicted.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.debug.xcconfig"; sourceTree = "<group>"; };
 		630473A31D8716250058A622 /* AuthorizeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
 		6308534F1D6CB4A500AB7690 /* AnnictAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictAPI.swift; sourceTree = "<group>"; };
 		630853511D6CB53000AB7690 /* AnnictRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictRequestType.swift; sourceTree = "<group>"; };
@@ -50,7 +51,7 @@
 		63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewModel.swift; sourceTree = "<group>"; };
 		63B788F81D62089400AE96B4 /* NSDate+Annict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Annict.swift"; sourceTree = "<group>"; };
 		63D32F601D7489500016929A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ED3A9E93F4B0C2837B535A1 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictApiService.swift; sourceTree = "<group>"; };
 		C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Easy.swift"; sourceTree = "<group>"; };
 		C1EAB9A21D24391400BDDC70 /* Annicted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Annicted.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +60,7 @@
 		C1EAB9AC1D24391400BDDC70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1EAB9AF1D24391400BDDC70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1EAB9B11D24391400BDDC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E98D9666A466D65A741FD6A3 /* Pods-Annicted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.release.xcconfig"; sourceTree = "<group>"; };
-		EA38C421292CBECF30F9FB3A /* Pods-Annicted.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.debug.xcconfig"; sourceTree = "<group>"; };
+		C8775E3F5C7BE6D2D204CD8A /* Pods-Annicted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				392BFC68DCA200A2E658649F /* Pods_Annicted.framework in Frameworks */,
+				597976048076C6BF980BB4FB /* Pods_Annicted.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,11 +110,19 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		A48BCD882893564E594DAEA0 /* Pods */ = {
+		7829ACD255A4C059C76F3E99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA38C421292CBECF30F9FB3A /* Pods-Annicted.debug.xcconfig */,
-				E98D9666A466D65A741FD6A3 /* Pods-Annicted.release.xcconfig */,
+				9ED3A9E93F4B0C2837B535A1 /* Pods_Annicted.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91F08AB8ED05BA4EA4D47DBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1497F159CC1FC8CCBD0A7414 /* Pods-Annicted.debug.xcconfig */,
+				C8775E3F5C7BE6D2D204CD8A /* Pods-Annicted.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -145,8 +153,8 @@
 				63D32F601D7489500016929A /* MyPlayground.playground */,
 				C1EAB9A41D24391400BDDC70 /* Annicted */,
 				C1EAB9A31D24391400BDDC70 /* Products */,
-				A48BCD882893564E594DAEA0 /* Pods */,
-				D955BB901887E79CC451B6B0 /* Frameworks */,
+				91F08AB8ED05BA4EA4D47DBC /* Pods */,
+				7829ACD255A4C059C76F3E99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,14 +179,6 @@
 				C1EAB9B11D24391400BDDC70 /* Info.plist */,
 			);
 			path = Annicted;
-			sourceTree = "<group>";
-		};
-		D955BB901887E79CC451B6B0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				65D2FAD89A019AB4E3013F80 /* Pods_Annicted.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +217,7 @@
 					C1EAB9A11D24391400BDDC70 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = BKGU87KMTC;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -433,7 +434,7 @@
 		};
 		C1EAB9B51D24391400BDDC70 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA38C421292CBECF30F9FB3A /* Pods-Annicted.debug.xcconfig */;
+			baseConfigurationReference = 1497F159CC1FC8CCBD0A7414 /* Pods-Annicted.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -441,12 +442,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hatenadiary.satoshin21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C1EAB9B61D24391400BDDC70 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E98D9666A466D65A741FD6A3 /* Pods-Annicted.release.xcconfig */;
+			baseConfigurationReference = C8775E3F5C7BE6D2D204CD8A /* Pods-Annicted.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -454,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hatenadiary.satoshin21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -26,17 +26,17 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
         
         title = "認証"
         
-        let params: [String:AnyObject] = ["client_id":AnnictApiConst.ClientId,
-                                          "response_type":"code",
-                                          "redirect_uri":AnnictApiConst.RedirectUri,
-                                          "scope":"read+write"]
+        let params: [String:AnyObject] = ["client_id":AnnictApiConst.ClientId as AnyObject,
+                                          "response_type":"code" as AnyObject,
+                                          "redirect_uri":AnnictApiConst.RedirectUri as AnyObject,
+                                          "scope":"read+write" as AnyObject]
         webView.loadRequest(.OAuthAuthorize, queryParams: params)
     }
     
-    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
 
-        if let absoluteUrl = request.URL?.absoluteString where absoluteUrl.hasPrefix(AnnictApiConst.RedirectUri),
-            let query = request.URL?.queryDictionary,let code = query["code"] {
+        if let absoluteUrl = request.url?.absoluteString , absoluteUrl.hasPrefix(AnnictApiConst.RedirectUri),
+            let query = request.url?.queryDictionary,let code = query["code"] {
             
             Session.sharedSession.sendRequest(AuthorizeRequest(code:code), callbackQueue: CallbackQueue.Main, handler: {[weak self] (result) in
                 

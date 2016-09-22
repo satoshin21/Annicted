@@ -11,14 +11,14 @@ import Himotoki
 
 struct MyProgram: Decodable {
     let id: Int
-    let startedAt: NSDate
+    let startedAt: Date
     let isRebroadcast: Bool
     let channelId: Int
     let channelName: String
     let work: Work
     let episode: Episode
     
-    static func decode(e: Extractor) throws -> MyProgram {
+    static func decode(_ e: Extractor) throws -> MyProgram {
         
        return try MyProgram(id: e <| "id",
                   startedAt: NSDate(iso8601String: e <|? "started_at")!,

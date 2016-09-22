@@ -10,14 +10,14 @@ import UIKit
 import KeychainAccess
 
 class AnnictTabbarController: UITabBarController {
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // アクセストークンが存在しない場合に限り認証画面を表示
         if Keychain()["accessToken"] == nil || Keychain()["accessToken"] == "" {
-            let authViewController = storyboard?.instantiateViewControllerWithIdentifier("AuthViewController") as! AuthViewController
+            let authViewController = storyboard?.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
             let navigationController = UINavigationController(rootViewController: authViewController)
-            presentViewController(navigationController, animated: true, completion: nil)
+            present(navigationController, animated: true, completion: nil)
         }
     }
 }

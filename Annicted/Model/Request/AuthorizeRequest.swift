@@ -28,15 +28,15 @@ class AuthorizeRequest: AnnictRequestType {
     
     var parameters: AnyObject? {
         var params = [String:AnyObject]()
-        params["client_id"] = AnnictApiConst.ClientId
-        params["client_secret"] = AnnictApiConst.ClientSecret
-        params["grant_type"] = "authorization_code"
-        params["redirect_uri"] = AnnictApiConst.RedirectUri
-        params["code"] = code
-        return params
+        params["client_id"] = AnnictApiConst.ClientId as AnyObject?
+        params["client_secret"] = AnnictApiConst.ClientSecret as AnyObject?
+        params["grant_type"] = "authorization_code" as AnyObject?
+        params["redirect_uri"] = AnnictApiConst.RedirectUri as AnyObject?
+        params["code"] = code as AnyObject?
+        return params as AnyObject?
     }
     
-    func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Void {
+    func responseFromObject(_ object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Void {
         let accessToken = try decodeValue(object, rootKeyPath: "access_token") as String
         Keychain()["accessToken"] = accessToken
     }

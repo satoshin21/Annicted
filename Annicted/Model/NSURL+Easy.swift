@@ -8,14 +8,14 @@
 
 import Foundation
 
-extension NSURL {
+extension URL {
     
     var baseURLString: String{
         guard let query = query else {
             return self.absoluteString
         }
         
-        return absoluteString.stringByReplacingOccurrencesOfString("?\(query)", withString: "")
+        return absoluteString.replacingOccurrences(of: "?\(query)", with: "")
     }
     
     var queryDictionary: [String:String]? {
@@ -24,7 +24,7 @@ extension NSURL {
         }
         
         var params = [String:String]()
-        query.componentsSeparatedByString("&").map({$0.componentsSeparatedByString("=")}).filter({$0.count == 2}).forEach { (keyParam) in
+        query.components(separatedBy: "&").map({$0.components(separatedBy: "=")}).filter({$0.count == 2}).forEach { (keyParam) in
             params[keyParam[0]] = keyParam[1]
         }
         return params

@@ -18,7 +18,7 @@ struct Episode: Decodable {
     let title: String?
     let recordsCount: Int
     
-    static func decode(e: Extractor) throws -> Episode {
+    static func decode(_ e: Extractor) throws -> Episode {
         return try Episode(id: e <| "id",
                            number: e <| "number",
                            numberText: e <| "number_text",
