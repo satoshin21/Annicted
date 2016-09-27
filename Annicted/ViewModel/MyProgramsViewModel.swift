@@ -30,8 +30,8 @@ class MyProgramsViewModel {
         
         refreshTrigger
             .filterHasAccessToken()
-            .filter{!self.isLoading.value}
-            .subscribe {[weak self] in
+            .filter({!self.isLoading.value})
+        .subscribe {[weak self] (event) in
                 guard let weakSelf = self else {
                     return
                 }
