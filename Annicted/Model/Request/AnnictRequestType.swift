@@ -8,7 +8,6 @@
 
 import APIKit
 import Himotoki
-import WebLinking
 import Keys
 import KeychainAccess
 
@@ -25,7 +24,7 @@ class AnnictApiConst {
     static let RedirectUri = "https://jp.hatenadiary.satoshin21/redirect_uri"
 }
 
-protocol AnnictRequestType: RequestType {
+protocol AnnictRequestType: Request {
     
     var resourcePath: AnnictApiService.ResourcePath { get }
 }

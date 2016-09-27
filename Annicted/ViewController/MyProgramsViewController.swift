@@ -20,27 +20,30 @@ class MyProgramsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rx_sentMessage(#selector(UIViewController.viewWillAppear))
+        rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .map{_ in}
             .bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
-        
+
         let refreshControl = UIRefreshControl()
-        refreshControl.rx_controlEvent(.ValueChanged).bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
-        viewModel.isLoading.asDriver().drive(refreshControl.rx_refreshing).addDisposableTo(disposeBag)
+        refreshControl.rx.controlEvent(.valueChanged).bindTo(viewModel.refreshTrigger).addDisposableTo(disposeBag)
+        viewModel.isLoading.asDriver().drive(refreshControl.rx.refreshing).addDisposableTo(disposeBag)
         self.refreshControl = refreshControl
-        
+
         tableView.delegate = nil
         tableView.dataSource = nil
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        viewModel.myPrograms.asObservable().bindTo(tableView.rx_itemsWithCellIdentifier("Cell"))(configureCell: { (index, myProgram, cell) in
-            
-            cell.textLabel?.text = myProgram.work.title
-            
+        
+        viewModel.myPrograms.asObservable()
+            .bindTo(tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self))({(index,myProgram,cell) in
+            cell.textLabel?.text = myProgram.episode.title
             }).addDisposableTo(disposeBag)
         
-        viewModel.error.asObservable().filter({$0 != nil}).map({$0!}).subscribeNext {[weak self] (e) in
-            let alert = UIAlertController(e: e)
-            self?.presentViewController(alert, animated: true, completion: nil)
+        viewModel.error.asObservable().filter({$0 != nil}).map({$0!}).subscribe {[weak self] (e) in
+            guard let error = e.error else {
+                return
+            }
+            let alert = UIAlertController(e: error)
+            self?.present(alert, animated: true, completion: nil)
         }.addDisposableTo(disposeBag)
     }
 }

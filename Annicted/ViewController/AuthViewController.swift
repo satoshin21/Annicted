@@ -38,14 +38,14 @@ class AuthViewController: UIViewController,UIWebViewDelegate {
         if let absoluteUrl = request.url?.absoluteString , absoluteUrl.hasPrefix(AnnictApiConst.RedirectUri),
             let query = request.url?.queryDictionary,let code = query["code"] {
             
-            Session.sharedSession.sendRequest(AuthorizeRequest(code:code), callbackQueue: CallbackQueue.Main, handler: {[weak self] (result) in
+            Session.shared.send(AuthorizeRequest(code:code), callbackQueue: CallbackQueue.main, handler: {[weak self] (result) in
                 
                 switch result {
-                case .Success:
-                    self?.dismissViewControllerAnimated(true, completion: nil)
-                case .Failure(let error):
+                case .success:
+                    self?.dismiss(animated: true, completion: nil)
+                case .failure(let error):
                     let alert = UIAlertController(e: error)
-                    self?.presentViewController(alert, animated: true, completion: nil)
+                    self?.present(alert, animated: true, completion: nil)
                 }
             })
         }

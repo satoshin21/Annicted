@@ -9,7 +9,6 @@
 import RxSwift
 import RxCocoa
 import APIKit
-import Action
 import KeychainAccess
 import Himotoki
 
@@ -32,21 +31,21 @@ class MyProgramsViewModel {
         refreshTrigger
             .filterHasAccessToken()
             .filter{!self.isLoading.value}
-            .subscribeNext {[weak self] in
+            .subscribe {[weak self] in
                 guard let weakSelf = self else {
                     return
                 }
                 weakSelf.pageIndex = 1
                 weakSelf.isLoading.value = true
-                Session.sharedSession.sendRequest(MyProgramsRequest(page:weakSelf.pageIndex), handler: { (result) in
+                Session.shared.send(MyProgramsRequest(page:weakSelf.pageIndex), handler: { (result) in
                     self?.isLoading.value = false
                     
                     switch result {
-                    case .Success(let success):
+                    case .success(let success):
                         self?.myPrograms.value = success.elements
-                    case .Failure(let error):
+                    case .failure(let error):
                         switch error {
-                        case .ResponseError(let responseError as DecodeError):
+                        case .responseError(let responseError as DecodeError):
                             print(responseError.description)
                             self?.error.value = responseError
                         default:
@@ -58,7 +57,7 @@ class MyProgramsViewModel {
         }.addDisposableTo(disposeBag)
         
         isLoading.asDriver()
-            .drive(UIApplication.sharedApplication().rx_networkActivityIndicatorVisible)
+            .drive(UIApplication.shared.rx.networkActivityIndicatorVisible)
             .addDisposableTo(disposeBag)
     }
 }

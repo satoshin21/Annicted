@@ -36,7 +36,7 @@ struct Work: Decodable {
              mediaText:         e <| "media_text",
              seasonName:        e <| "season_name",
              seasonNameText:    e <| "season_name_text",
-             releasedOn:        NSDate(string: e <|? "released_on", format: "yyyy-MM-dd"),
+             releasedOn:        Date(string: e <|? "released_on", format: "yyyy-MM-dd"),
              releasedOnAbout:   e <| "released_on_about",
              officialSiteUrl:   e <| "official_site_url",
              wikipediaUrl:      e <| "wikipedia_url",

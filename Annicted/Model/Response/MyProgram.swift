@@ -21,7 +21,7 @@ struct MyProgram: Decodable {
     static func decode(_ e: Extractor) throws -> MyProgram {
         
        return try MyProgram(id: e <| "id",
-                  startedAt: NSDate(iso8601String: e <|? "started_at")!,
+                  startedAt: Date(iso8601String: e <|? "started_at")!,
                   isRebroadcast: e <| "is_rebroadcast",
                   channelId: e <| ["channel","id"],
                   channelName: e <| ["channel","name"],

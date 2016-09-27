@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		597976048076C6BF980BB4FB /* Pods_Annicted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3A9E93F4B0C2837B535A1 /* Pods_Annicted.framework */; };
 		630473A41D8716250058A622 /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630473A31D8716250058A622 /* AuthorizeRequest.swift */; };
 		630853501D6CB4A500AB7690 /* AnnictAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308534F1D6CB4A500AB7690 /* AnnictAPI.swift */; };
 		630853521D6CB53000AB7690 /* AnnictRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630853511D6CB53000AB7690 /* AnnictRequestType.swift */; };
@@ -30,10 +29,12 @@
 		C1EAB9AB1D24391400BDDC70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EAB9A91D24391400BDDC70 /* Main.storyboard */; };
 		C1EAB9AD1D24391400BDDC70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1EAB9AC1D24391400BDDC70 /* Assets.xcassets */; };
 		C1EAB9B01D24391400BDDC70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EAB9AE1D24391400BDDC70 /* LaunchScreen.storyboard */; };
+		E6CD6C2096D96332C7EFAC19 /* Pods_Annicted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B34369C86AE8C3ED84DE7A1 /* Pods_Annicted.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1497F159CC1FC8CCBD0A7414 /* Pods-Annicted.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.debug.xcconfig"; sourceTree = "<group>"; };
+		2B34369C86AE8C3ED84DE7A1 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4376CBFA0A6DE4AE1B0398 /* Pods-Annicted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.release.xcconfig"; sourceTree = "<group>"; };
 		630473A31D8716250058A622 /* AuthorizeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
 		6308534F1D6CB4A500AB7690 /* AnnictAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictAPI.swift; sourceTree = "<group>"; };
 		630853511D6CB53000AB7690 /* AnnictRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictRequestType.swift; sourceTree = "<group>"; };
@@ -50,8 +51,7 @@
 		63592DBE1D62F23D0027915F /* MyProgramsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewController.swift; sourceTree = "<group>"; };
 		63B788F21D6203A600AE96B4 /* MyProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramsViewModel.swift; sourceTree = "<group>"; };
 		63B788F81D62089400AE96B4 /* NSDate+Annict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Annict.swift"; sourceTree = "<group>"; };
-		63D32F601D7489500016929A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		9ED3A9E93F4B0C2837B535A1 /* Pods_Annicted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annicted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61D3C305AD916FB606C2928 /* Pods-Annicted.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.debug.xcconfig"; sourceTree = "<group>"; };
 		C11D3F3F1D3FE8D300869CA5 /* AnnictApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnictApiService.swift; sourceTree = "<group>"; };
 		C19134871D55C3D6004B9E25 /* NSURL+Easy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Easy.swift"; sourceTree = "<group>"; };
 		C1EAB9A21D24391400BDDC70 /* Annicted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Annicted.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +60,6 @@
 		C1EAB9AC1D24391400BDDC70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1EAB9AF1D24391400BDDC70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1EAB9B11D24391400BDDC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8775E3F5C7BE6D2D204CD8A /* Pods-Annicted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annicted.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annicted/Pods-Annicted.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597976048076C6BF980BB4FB /* Pods_Annicted.framework in Frameworks */,
+				E6CD6C2096D96332C7EFAC19 /* Pods_Annicted.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,19 +109,19 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		7829ACD255A4C059C76F3E99 /* Frameworks */ = {
+		6646615D8E349981A7195EDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9ED3A9E93F4B0C2837B535A1 /* Pods_Annicted.framework */,
+				2B34369C86AE8C3ED84DE7A1 /* Pods_Annicted.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		91F08AB8ED05BA4EA4D47DBC /* Pods */ = {
+		A9B15C29DB70C5ECBBA158F7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1497F159CC1FC8CCBD0A7414 /* Pods-Annicted.debug.xcconfig */,
-				C8775E3F5C7BE6D2D204CD8A /* Pods-Annicted.release.xcconfig */,
+				A61D3C305AD916FB606C2928 /* Pods-Annicted.debug.xcconfig */,
+				5D4376CBFA0A6DE4AE1B0398 /* Pods-Annicted.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -150,11 +149,10 @@
 		C1EAB9991D24391400BDDC70 = {
 			isa = PBXGroup;
 			children = (
-				63D32F601D7489500016929A /* MyPlayground.playground */,
 				C1EAB9A41D24391400BDDC70 /* Annicted */,
 				C1EAB9A31D24391400BDDC70 /* Products */,
-				91F08AB8ED05BA4EA4D47DBC /* Pods */,
-				7829ACD255A4C059C76F3E99 /* Frameworks */,
+				A9B15C29DB70C5ECBBA158F7 /* Pods */,
+				6646615D8E349981A7195EDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,12 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1EAB9B41D24391400BDDC70 /* Build configuration list for PBXNativeTarget "Annicted" */;
 			buildPhases = (
-				A4BDEACE7F564D8AE143C981 /* [CP] Check Pods Manifest.lock */,
+				968FCFD1A6EE1CED308C37B1 /* [CP] Check Pods Manifest.lock */,
 				C1EAB99E1D24391400BDDC70 /* Sources */,
 				C1EAB99F1D24391400BDDC70 /* Frameworks */,
 				C1EAB9A01D24391400BDDC70 /* Resources */,
-				64ACB8461B11C7110BF36A23 /* [CP] Embed Pods Frameworks */,
-				9F0560F048CD0C9EA0A6E9AD /* [CP] Copy Pods Resources */,
+				7CDE6AD3DADCA9F1CAFA5AF3 /* [CP] Embed Pods Frameworks */,
+				7C4229F9EA5D47D95D1E8A5A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,22 +251,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		64ACB8461B11C7110BF36A23 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Annicted/Pods-Annicted-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F0560F048CD0C9EA0A6E9AD /* [CP] Copy Pods Resources */ = {
+		7C4229F9EA5D47D95D1E8A5A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,7 +266,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Annicted/Pods-Annicted-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4BDEACE7F564D8AE143C981 /* [CP] Check Pods Manifest.lock */ = {
+		7CDE6AD3DADCA9F1CAFA5AF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Annicted/Pods-Annicted-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		968FCFD1A6EE1CED308C37B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -439,7 +437,7 @@
 		};
 		C1EAB9B51D24391400BDDC70 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1497F159CC1FC8CCBD0A7414 /* Pods-Annicted.debug.xcconfig */;
+			baseConfigurationReference = A61D3C305AD916FB606C2928 /* Pods-Annicted.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -454,7 +452,7 @@
 		};
 		C1EAB9B61D24391400BDDC70 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8775E3F5C7BE6D2D204CD8A /* Pods-Annicted.release.xcconfig */;
+			baseConfigurationReference = 5D4376CBFA0A6DE4AE1B0398 /* Pods-Annicted.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

@@ -16,14 +16,14 @@ extension Date {
         guard let iso8601String = iso8601String,let date = Date.stringToDate(iso8601String) else {
             return nil
         }
-        (self as NSDate).init(timeInterval:0, since: date)
+        self.init(timeInterval:0, since: date)
     }
     
     init?(string: String?,format:  String) {
         guard let string = string,let date = Date.stringToDate(string,format: format) else {
             return nil
         }
-        (self as NSDate).init(timeInterval:0, since: date)
+        self.init(timeInterval:0, since: date)
     }
     
     fileprivate static func stringToDate(_ iso8601String: String,format: String = AnnictDateFormat) -> Date? {

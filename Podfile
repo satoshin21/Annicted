@@ -1,16 +1,16 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 def pod_install
+    pod 'Alamofire', '4.0.1'
     pod 'RxSwift'
     pod 'RxCocoa'
-    pod 'KeychainAccess' 
-    pod 'APIKit'
+    pod 'RxAlamofire', '~> 3.0.0-beta.1'
+    pod 'KeychainAccess'
+    pod 'SwiftyJSON'
+    pod 'APIKit', '~> 3.0-beta.2'
     pod 'Himotoki'
-    pod 'WebLinking'
-    pod 'Action'
-    pod 'SwiftDate'
 end
 
 target 'Annicted' do

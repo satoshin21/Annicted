@@ -12,6 +12,7 @@ import Himotoki
 import KeychainAccess
 
 struct MyProgramsRequest: PaginationRequestType {
+
     let page: Int
     let accessToken: String
     
@@ -24,14 +25,14 @@ struct MyProgramsRequest: PaginationRequestType {
     typealias Response = PaginationResponse<MyProgram>
     
     var method: HTTPMethod {
-        return .GET
+        return .get
     }
     
     var resourcePath: AnnictApiService.ResourcePath {
         return .MePrograms
     }
     
-    var parameters: AnyObject? {
+    var parameters: Any? {
         return ["per_page": 50, "page": page,"access_token":accessToken]
     }
     
@@ -39,8 +40,8 @@ struct MyProgramsRequest: PaginationRequestType {
     static func requestWithPage(_ page: Int) -> MyProgramsRequest {
         return MyProgramsRequest(page: page)
     }
-    
-    func responseFromObject(_ object: AnyObject, URLResponse: HTTPURLResponse) throws -> Response {
+
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> PaginationResponse<MyProgram> {
         print(object)
         let elements = try decodeArray(object, rootKeyPath: "programs") as [Response.Element]
         return Response(elements: elements)
